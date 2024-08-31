@@ -51,7 +51,7 @@ export const style = StyleSheet.create({
         width: '100%',
         height: 40,
         borderWidth: 1,
-        // borderRadius: 40,
+        borderRadius: 40,
         marginTop: 10,
         flexDirection: 'row'
     },

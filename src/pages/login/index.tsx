@@ -4,11 +4,14 @@ import {
     Text, 
     View,
     Image,
-    TextInput
+    TextInput,
+    TouchableOpacity
 } from 'react-native';
 
 import { style } from "./style";
 import Logo from '../../assets/logo.png';
+import {MaterialIcons} from '@expo/vector-icons';
+import { themes } from "../../global/themes";
 
 export default function Login(){
     return (
@@ -28,15 +31,30 @@ export default function Login(){
                     <TextInput
                         style={style.input}
                     />
-                    <Text>Ola</Text>
+                    <MaterialIcons
+                        name='email'
+                        size={20}
+                        color={themes.colors.gray}
+                    />
                 </View>
 
                 <Text style={style.titleInput}>SENHA</Text>
-                <TextInput />
+                <View style={style.BoxInput}>
+                    <TextInput
+                        style={style.input}
+                    />
+                    <MaterialIcons
+                        name='remove-red-eye'
+                        size={20}
+                        color={themes.colors.gray}
+                    />
+                </View>
             </View>
             
             <View style={style.boxBottom}>
-                <Text>Bottom</Text>
+                <TouchableOpacity style={style.button}>
+                    <Text style={style.textButton}>Entrar</Text>
+                </TouchableOpacity>
             </View>
         </View>
     )

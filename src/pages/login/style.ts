@@ -20,14 +20,13 @@ export const style = StyleSheet.create({
     boxMid:{
         height: Dimensions.get('window').height/4,
         width: "100%",
-        backgroundColor: 'green',
         paddingHorizontal: 37
     },
 
     boxBottom:{
         height: Dimensions.get('window').height/3,
         width: "100%",
-        backgroundColor: 'blue',
+        alignItems: 'center'
     },
 
     logo:{
@@ -53,11 +52,39 @@ export const style = StyleSheet.create({
         borderWidth: 1,
         borderRadius: 40,
         marginTop: 10,
-        flexDirection: 'row'
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingHorizontal: 5,
+        backgroundColor: themes.colors.lighGray,
+        borderColor: themes.colors.lighGray
     },
 
     input:{
         height: '100%',
-        width: '100%',
+        width: '90%',  
+        borderRadius: 40,
+    },
+
+    button:{
+        width: 250,
+        height: 50,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: themes.colors.primary,
+        borderRadius: 40,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: 0,
+            height: 3,
+        },
+        shadowOpacity: 0.29,
+        shadowRadius: 4.65,
+        elevation: 7
+    },
+
+    textButton:{
+        fontSize: 16,
+        color: themes.colors.secondary,
+        fontWeight: 'bold'
     }
 })

@@ -56,6 +56,7 @@ export default function Login(){
                     <Text style={style.textButton}>Entrar</Text>
                 </TouchableOpacity>
             </View>
+            <Text style={style.textBottom}>Não tem conta? <Text style={{color: themes.colors.primary}}>Crie agora!</Text></Text>
         </View>
     )
 }

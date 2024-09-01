@@ -63,6 +63,7 @@ export const style = StyleSheet.create({
         height: '100%',
         width: '90%',  
         borderRadius: 40,
+        paddingLeft: 5
     },
 
     button:{
@@ -86,5 +87,10 @@ export const style = StyleSheet.create({
         fontSize: 16,
         color: themes.colors.secondary,
         fontWeight: 'bold'
+    },
+
+    textBottom:{
+        fontSize: 16,
+        color: themes.colors.gray,
     }
 })

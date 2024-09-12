@@ -13,6 +13,7 @@ import Logo from '../../assets/logo.png';
 import {MaterialIcons} from '@expo/vector-icons';
 import { themes } from "../../global/themes";
 
+// Exṕort login page
 export default function Login(){
     return (
         <View style={style.container}>

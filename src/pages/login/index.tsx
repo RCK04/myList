@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { 
     Text, 
     View,
     Image,
     TextInput,
-    TouchableOpacity
+    TouchableOpacity,
+    Alert,
+    ActivityIndicator
 } from 'react-native';
 
 import { style } from "./style";
@@ -15,6 +17,28 @@ import { themes } from "../../global/themes";
 
 // Exṕort login page
 export default function Login(){
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [loading, setLoading] = useState(false);
+
+    async function getLogin(){
+        try {
+            setLoading(true);
+            if(!email || !password){
+                return Alert.alert('Atenção', 'Informe os campos obrigatórios!');
+            }
+
+            setTimeout(() => {
+                Alert.alert('Logado com sucesso!');
+                setLoading(false)
+            }, 3000)
+
+            
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     return (
         <View style={style.container}>
             <View style={style.boxTop}>
@@ -31,6 +55,10 @@ export default function Login(){
                 <View style={style.BoxInput}>
                     <TextInput
                         style={style.input}
+                        value={email}
+                        onChangeText = {setEmail}
+
+
                     />
                     <MaterialIcons
                         name='email'
@@ -43,6 +71,8 @@ export default function Login(){
                 <View style={style.BoxInput}>
                     <TextInput
                         style={style.input}
+                        value={password}
+                        onChangeText={setPassword}
                     />
                     <MaterialIcons
                         name='remove-red-eye'
@@ -53,8 +83,13 @@ export default function Login(){
             </View>
             
             <View style={style.boxBottom}>
-                <TouchableOpacity style={style.button}>
-                    <Text style={style.textButton}>Entrar</Text>
+                <TouchableOpacity style={style.button} onPress={getLogin}>
+                    {
+                        loading?
+                            <ActivityIndicator color={'#ffffff'} size={"small"} />
+                        :
+                            <Text style={style.textButton}>Entrar</Text>
+                    }
                 </TouchableOpacity>
             </View>
             <Text style={style.textBottom}>Não tem conta? <Text style={{color: themes.colors.primary}}>Crie agora!</Text></Text>

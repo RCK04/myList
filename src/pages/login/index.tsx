@@ -31,7 +31,7 @@ export default function Login(){
             setTimeout(() => {
                 Alert.alert('Logado com sucesso!');
                 setLoading(false)
-            }, 3000)
+            }, 2500)
 
             
         } catch (error) {

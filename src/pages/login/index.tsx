@@ -15,7 +15,7 @@ import Logo from '../../assets/logo.png';
 import {MaterialIcons} from '@expo/vector-icons';
 import { themes } from "../../global/themes";
 
-// Exṕort login page
+// Exṕort login page - step 1
 export default function Login(){
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
